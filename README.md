@@ -1,6 +1,6 @@
 # Spark Streaming Application with nats reader/writer
 
-Modified version of JavaNetworkWorkdCount example.
+Modified version of JavaNetworkWorkCount example. This app currently reads from `foo` channel and writes on `bar` channel.
 
 ### Requirements
 1. Java 1.8
