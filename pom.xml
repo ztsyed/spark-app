@@ -1,5 +1,5 @@
 <project>
-  <groupId>edu.berkeley</groupId>
+  <groupId>com.erix</groupId>
   <artifactId>spark-app</artifactId>
   <modelVersion>4.0.0</modelVersion>
   <name>Spark OpenCV Pattern Recognition</name>
