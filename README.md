@@ -32,7 +32,7 @@ You need to provide a url to the nats server in the format of `nats://ip:port` o
 
 Assuming you downloaded and compiled spark at `/spark-1.3.1`
 ```
-/spark-1.3.1/bin/spark-submit --class org.apache.spark.examples.streaming.OpenCVFeatureCount target/spk-app-1.0.jar nats://127.0.0.1:4222
+/spark-1.3.1/bin/spark-submit --class com.erix.streaming.OpenCVFeatureCount target/spk-app-1.0.jar nats://127.0.0.1:4222
 ```
 
 ### Simple Go application that pub/sub on nats
