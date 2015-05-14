@@ -82,8 +82,8 @@ public final class OpenCVFeatureCount {
     ssc.checkpoint("./ck");
 
     // Initial RDD input to updateStateByKey
-    List<Tuple2<String, Integer>> tuples = Arrays.asList(new Tuple2<String, Integer>("hello", 1),
-            new Tuple2<String, Integer>("world", 1));
+    //List<Tuple2<String, Integer>> tuples = Arrays.asList(new Tuple2<String, Integer>("hello", 1),
+    //        new Tuple2<String, Integer>("world", 1));
     JavaPairRDD<String, Integer> initialRDD = ssc.sc().parallelizePairs(tuples);
 
     JavaReceiverInputDStream<String> lines = ssc.receiverStream(nc);
