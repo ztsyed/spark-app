@@ -82,8 +82,7 @@ public final class OpenCVFeatureCount {
     ssc.checkpoint("./ck");
 
     // Initial RDD input to updateStateByKey
-    //List<Tuple2<String, Integer>> tuples = Arrays.asList(new Tuple2<String, Integer>("hello", 1),
-    //        new Tuple2<String, Integer>("world", 1));
+     List<Tuple2<String, Integer>> tuples = Arrays.asList(new Tuple2<String, Integer>("0",0),new Tuple2<String, Integer>("0",0));
     JavaPairRDD<String, Integer> initialRDD = ssc.sc().parallelizePairs(tuples);
 
     JavaReceiverInputDStream<String> lines = ssc.receiverStream(nc);
@@ -114,8 +113,8 @@ public final class OpenCVFeatureCount {
     stateDstream.foreachRDD(new Function2<JavaPairRDD<String, Integer>, Time, Void>() {
       @Override
       public Void call(JavaPairRDD<String, Integer> rdd, Time time) throws IOException {
-        //String counts = "Counts at time " + time + " " + rdd.collect();
-        //System.out.println(counts);
+        String counts = "Counts at time " + time + " " + rdd.collect();
+        System.out.println(counts);
         nc.Publish("bar",rdd.collect().toString());
         return null;
       }
