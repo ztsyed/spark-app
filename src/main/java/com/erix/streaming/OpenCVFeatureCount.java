@@ -113,8 +113,8 @@ public final class OpenCVFeatureCount {
     stateDstream.foreachRDD(new Function2<JavaPairRDD<String, Integer>, Time, Void>() {
       @Override
       public Void call(JavaPairRDD<String, Integer> rdd, Time time) throws IOException {
-        String counts = "Counts at time " + time + " " + rdd.collect();
-        System.out.println(counts);
+        //String counts = "Counts at time " + time + " " + rdd.collect();
+        //System.out.println(counts);
         nc.Publish("bar",rdd.collect().toString());
         return null;
       }

@@ -61,7 +61,7 @@ public class NatsClient extends Receiver<String> {
 			try {
 				conn.subscribe(chan_name, new MsgHandler() {
 					public void execute(String msg) {
-						System.out.println("Received a message: " + msg);
+						//System.out.println("Received a message: " + msg);
 						if(!isStopped()){
 							store(msg);
 						}
@@ -74,12 +74,12 @@ public class NatsClient extends Receiver<String> {
 	}
 
 	public void Publish(String chan_name, final String msg) {
-		System.out.println("Publish called:"+msg + " " +conn.isConnected());
+		//System.out.println("Publish called:"+msg + " " +conn.isConnected());
 		if (conn!=null && conn.isConnected()) {
 			try {
 				conn.publish(chan_name, msg, new MsgHandler() {
 					public void execute() {
-						System.out.println("Message Sent!["+msg+"]");
+						//System.out.println("Message Sent!["+msg+"]");
 					}
 				});
 			} catch (Exception e) {
