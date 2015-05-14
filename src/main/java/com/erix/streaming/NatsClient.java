@@ -39,6 +39,7 @@ public class NatsClient extends Receiver<String> {
 			// conn.close();
 		} catch (Exception e) {
 			System.out.println("Error ");
+			System.exit(1);
 		}
 	}
 
